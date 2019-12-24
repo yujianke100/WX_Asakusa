@@ -1,0 +1,5 @@
+<view class="container">
+  <text class = "qian">{{qian}}</text>
+  <text class = "jie">{{jie}}</text>   
+</view>
+  

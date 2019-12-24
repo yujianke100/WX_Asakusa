@@ -1,0 +1,79 @@
+{
+	"description": "项目配置文件",
+	"packOptions": {
+		"ignore": []
+	},
+	"setting": {
+		"urlCheck": true,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true,
+		"coverView": true,
+		"autoAudits": false,
+		"showShadowRootInWxmlPanel": true,
+		"scopeDataCheck": false,
+		"checkInvalidKey": true,
+		"checkSiteMap": true,
+		"uploadWithSourceMap": true,
+		"babelSetting": {
+			"ignore": [],
+			"disablePlugins": [],
+			"outputPath": ""
+		}
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.9.4",
+	"appid": "wx4d8a51c79c3d92a4",
+	"projectname": "asakusa",
+	"cloudfunctionTemplateRoot": "",
+	"watchOptions": {
+		"ignore": []
+	},
+	"debugOptions": {
+		"hidedInDevtools": []
+	},
+	"scripts": {},
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"list": []
+		},
+		"gamePlugin": {
+			"current": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": -1,
+			"list": [
+				{
+					"id": -1,
+					"name": "pages/detail/detail",
+					"pathName": "pages/index/detail",
+					"query": "qian= `第一大吉 七宝浮图塔 高峯顶上安 众人皆仰望 莫作等闲看`&&jie= ` 愿望：会充分地实现吧。 疾病：会治愈吧。 盼望的人：会出现吧。 遗失物：变得迟迟地才找到吧。 盖新居、搬家、嫁娶、旅行、交往等：全部很好吧。 万事行为谨慎。粗心大意行事的话，就会发生意想之外的灾害吧。`",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/detail/detail",
+					"pathName": "pages/detail/detail",
+					"query": "qian= `第一大吉 七宝浮图塔 高峯顶上安 众人皆仰望 莫作等闲看`&&jie= ` 愿望：会充分地实现吧。 疾病：会治愈吧。 盼望的人：会出现吧。 遗失物：变得迟迟地才找到吧。 盖新居、搬家、嫁娶、旅行、交往等：全部很好吧。 万事行为谨慎。粗心大意行事的话，就会发生意想之外的灾害吧。`",
+					"scene": null
+				}
+			]
+		}
+	}
+}
