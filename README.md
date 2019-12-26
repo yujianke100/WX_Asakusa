@@ -1,7 +1,7 @@
 # WX_Asakusa
 浅草寺一百观音签
 
-(https://github.com/yujianke100/WX_Asakusa/blob/master/images/gh_a6d8c579f96c_344.jpg)
+![QR Code](https://github.com/yujianke100/WX_Asakusa/blob/master/images/gh_a6d8c579f96c_344.jpg)
 
 ##mysql:
 * asakusa
