@@ -1,24 +1,45 @@
 /* pages/detail/detail.wxss */
+page{
+  height:100%;
+  overflow: hidden;
+}
 .container{
-    height: 80vh;
+    margin-top: 100rpx;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
 }
+.bgi{
+    position: absolute;
+    top: 0;
+    left: -950rpx;
+    width: 320%;
+    height: 110%;
+    /* border-radius: 10%; */
+    opacity: 0.2;
+    z-index: -1;
+}
 text{
   text-align: center;
   font-family: KaiTi;
   font-size: 40rpx;
+  font-weight: 400;
 }
 .qian{
+  writing-mode: vertical-rl;
   border-style: solid;
   border-width: 2px;
   border-color: black;
-  font-size: 60rpx;
+  font-size: 50rpx;
   padding: 60rpx 40rpx;
+  box-shadow: 5px 10px 15px 2px rgba(0,0,0,0.1);
+  background-color: rgba(255, 255, 255, 0.548);
 }
 .jie{
   text-align: left;
   width: 600rpx;
+}
+button{
+  margin-top: 50rpx;
 }

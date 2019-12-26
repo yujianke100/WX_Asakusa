@@ -1,4 +1,4 @@
-
+const app = getApp();
 Page({
 
   /**
@@ -8,7 +8,56 @@ Page({
     qian:"",
     jie:""
   },
+  about:function(){
+    wx.navigateTo({
+      url: '/pages/about/about',
+    })
+  },
+  bangQian: function(){
+    this.OpenidDelete();
+  },
 
+  OpenidDelete: function () {
+    wx.login({
+      success(res) {
+        wx.request({
+          url: 'https://ayaya.press/xcx/mainXCX.php', //服务器地址
+          data: {
+            code: res.code,//请求参数
+            num: -1,
+            mode: 0,
+          },
+          header: {
+            'content-type': 'application/json'
+          },
+          success: function (codRes) {
+            app.BtnFlag = 0;
+            wx.showModal({
+              title: '提示',
+              content: '已经把签诗绑上了哦',
+              showCancel: false,
+              success(res) {
+                if (res.confirm) {
+                  wx.clearStorage();
+                  wx.reLaunch({
+                    url: '/pages/index/index',
+                  })
+                } else if (res.cancel) {
+                  console.log('用户点击取消')
+                }
+              }
+            })
+          },
+          fail: function (codRes){
+            wx.showToast({
+              title: '未知错误',
+              showCancel: false
+            })
+          },
+        })
+      }
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */

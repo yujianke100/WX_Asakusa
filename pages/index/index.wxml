@@ -1,8 +1,8 @@
 <view class="container">
-  <image class="icon" src="/images/asakusa.jpg"></image>  
-  <text>{{name}}</text>
-  <text class = "qian" style = "display:{{QianMode}}">{{qian}}</text>
-  <button  open-type="getUserInfo"
-  bindgetuserinfo="launch">{{BtnInfo}}</button>   
+  <image class="title" src="/images/title.png" style="{{titleStyle}}"></image>
+  <image class="bgi" src="/images/asakusa.jpg" style="{{bgiStyle}}"></image>  
+  <image class="wait" src="/images/loading.png" style="{{waitStyle}}"></image>
+  <text class = "qian" style = "{{QianMode}}">{{qian}}</text>
+  <button open-type="getUserInfo" bindgetuserinfo="launch" style="{{btnStyle}}">{{BtnInfo}}</button>
 </view>
   

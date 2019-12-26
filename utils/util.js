@@ -1,8 +1,39 @@
+var showBusy = text => wx.showToast({
+  title: text,
+  icon: 'loading',
+  duration: 10000
+})
+
+// 显示成功提示
+var showSuccess = text => wx.showToast({
+  title: text,
+  icon: 'success'
+})
+
+// 一般错误提示
+var showErr = text => wx.showToast({
+  title: text,
+  showCancel: false
+})
+
+
+// 显示失败提示
+var showModel = (title, content) => {
+  wx.hideToast();
+
+  wx.showModal({
+    title,
+    content: JSON.stringify(content),
+    showCancel: false
+  })
+}
+
 function ChouQian(id) {
     let qian='';
     let jie='';
     if (id == 1){
         qian = `第一大吉
+        
 七宝浮图塔
 高峯顶上安
 众人皆仰望
@@ -16,6 +47,7 @@ function ChouQian(id) {
 万事行为谨慎。粗心大意行事的话，就会发生意想之外的灾害吧。`;}
     else if (id == 2){
         qian = `第二小吉
+        
 月被浮云翳
 立事自昏迷
 幸乞阴公佑
@@ -30,6 +62,7 @@ function ChouQian(id) {
 结亲缘、旅行：顺利进行吧。`;}
     else if (id == 3){
         qian = `第三凶
+        
 愁恼损忠良
 青宵一炷香
 虽然防小过
@@ -44,6 +77,7 @@ function ChouQian(id) {
 结婚交往：要节制吧。`;}
     else if (id == 4){
         qian = `第四吉
+        
 累有兴云志
 君恩禄未封
 若逢侯手印
@@ -57,6 +91,7 @@ function ChouQian(id) {
 盖新居、搬家、结亲缘、交往：万事都好吧。`;}
     else if (id == 5){
         qian = `第五凶
+        
 家道未能昌
 危危保祸殃
 暗云侵月桂
@@ -70,6 +105,7 @@ function ChouQian(id) {
 结亲缘、旅行、交往：因为万事凶恶，请诸行为慎重行事。`;}
     else if (id == 6){
         qian = `第六末吉
+        
 宅墓鬼凶多
 人事有爻讹
 伤财防损失
@@ -84,6 +120,7 @@ function ChouQian(id) {
 结亲缘、交往：坏吧。`;}
     else if (id == 7){
         qian = `第七凶
+        
 登舟待便风
 月色暗蒙眬
 遇碾香轮去
@@ -97,6 +134,7 @@ function ChouQian(id) {
 结亲缘、喜庆祝贺、旅行、交往：不好吧。`;}
     else if (id == 8){
         qian = `第八大吉
+        
 勿头中见尾
 文华须得理
 禾刀自偶然
@@ -111,6 +149,7 @@ function ChouQian(id) {
 结亲缘：全都是好的吧。`;}
     else if (id == 9){
         qian = `第九大吉
+        
 有名须得遇
 三望一朝迁
 贵人来指处
@@ -125,6 +164,7 @@ function ChouQian(id) {
 旅行：没问题吧。`;}
     else if (id == 10){
         qian = `第十大吉
+        
 旧用多成破
 新更始见财
 改求云外望
@@ -138,6 +178,7 @@ function ChouQian(id) {
 结亲缘、旅行、交往：全部变为好结果吧。`;}
     else if (id == 11){
         qian = `第十一大吉
+        
 有禄兴家业
 文华达帝都
 云中乘好箭
@@ -152,6 +193,7 @@ function ChouQian(id) {
 结婚、交往：全部都能得到好结果吧。`;}
     else if (id == 12){
         qian = `第十二大吉
+        
 杨柳遇春时
 残花发旧枝
 重重霜雪里
@@ -166,6 +208,7 @@ function ChouQian(id) {
 结婚、交往：全都适当吧。`;}
     else if (id == 13){
         qian = `第十三大吉
+        
 手把大阳辉
 东君发旧枝
 稼苗方欲秀
@@ -180,6 +223,7 @@ function ChouQian(id) {
 结婚、交往：全部都好吧。`;}
     else if (id == 14){
         qian = `第十四末吉
+        
 玉石未分时
 忧心转更悲
 前途通大道
@@ -194,6 +238,7 @@ function ChouQian(id) {
 旅行、交往：避开吧。`;}
     else if (id == 15){
         qian = `第十五凶
+        
 年乖数亦孤
 久病未能苏
 岸危舟未发
@@ -207,6 +252,7 @@ function ChouQian(id) {
 旅行、结亲缘：坏吧。`;}
     else if (id == 16){
         qian = `第十六吉
+        
 破改重成望
 前途喜亦宁
 贵人相助处
@@ -220,6 +266,7 @@ function ChouQian(id) {
 旅行：好吧。结亲缘、交往：全部会变成好结果吧。`;}
     else if (id == 17){
         qian = `第十七凶
+        
 怪异防忧恼
 人宅见分离
 惜华还值雨
@@ -234,6 +281,7 @@ function ChouQian(id) {
 婚事、交往：全部不好吧。`;}
     else if (id == 18){
         qian = `第十八吉
+        
 离暗出明时
 麻衣变绿衣
 旧忧终是退
@@ -248,6 +296,7 @@ function ChouQian(id) {
 结亲缘、交往：全部变为好结果吧。`;}
     else if (id == 19){
         qian = `第十九末小吉
+        
 家道生荆棘
 儿孙防虎威
 香前祈福厚
@@ -263,6 +312,7 @@ function ChouQian(id) {
 交往：节制吧。`;}
     else if (id == 20){
         qian = `第二十吉
+        
 月出渐分明
 家财每每兴
 何言先有滞
@@ -277,6 +327,7 @@ function ChouQian(id) {
 旅行：好吧。`;}
     else if (id == 21){
         qian = `第二十一吉
+        
 洗出经年否
 光华得再清
 所求终吉利
@@ -291,6 +342,7 @@ function ChouQian(id) {
 旅行、交往：全部好吧。`;}
     else if (id == 22){
         qian = `第二十二吉
+        
 渐渐浓云散
 看看月再明
 逢春华菓秀
@@ -304,13 +356,12 @@ function ChouQian(id) {
 结婚、旅行、交往：全都好吧。`;}
     else if (id == 23){
         qian = `第二十三吉
+        
 红云随步起
 一箭中青霄
 鹿行千里远
-争知去路遥
-【争知】就是现代`
-        jie = `用语的『怎知』之意。
-
+争知去路遥`
+        jie = `
 愿望：虽然会实现，但是要考虑能力吧。
 疾病：难以康复吧。
 遗失物：难以找到吧。
@@ -320,12 +371,12 @@ function ChouQian(id) {
 旅行：没问题吧。`;}
     else if (id == 24){
         qian = `第二十四凶
+        
 三女莫相逢
 盟言说未通
 门里心肝挂
-缟素子重重
-（三女的意思是`
-        jie = `奸字）
+缟素子重重`
+        jie = `
 
 愿望：不会实现吧。
 疾病：虽然拖很长，但会治好吧。
@@ -336,6 +387,7 @@ function ChouQian(id) {
 结婚、交往：变成不好的结果吧。`;}
     else if (id == 25){
         qian = `第二十五吉
+        
 枯木逢春生
 前途必利亨
 亦得佳人箭
@@ -349,11 +401,11 @@ function ChouQian(id) {
 结婚、旅行、交往：全部都变成好结果吧。`;}
     else if (id == 26){
         qian = `第二十六吉
+        
 将军有异声
 进兵万里程
 争知临敌处
-道胜却虚名
-【争知】就是现代`
+道胜却虚名`
         jie = `用语的『怎知』之意。
 
 愿望：会实现吧。
@@ -365,6 +417,7 @@ function ChouQian(id) {
 结婚、交往：会变成好结果吧。`;}
     else if (id == 27){
         qian = `第二十七吉
+        
 望禄应重山
 花红喜悦颜
 举头看皎月
@@ -379,12 +432,12 @@ function ChouQian(id) {
 结婚、交往：全部都变成好结果吧。`;}
     else if (id == 28){
         qian = `第二十八凶
+        
 意速无船渡
 波深必误身
 切须回旧路
-方可免灾迍
-迍：zhun(1,处`
-            jie = `境艰险，前进困难
+方可免灾迍`
+            jie = `
 
 愿望：难以实现吧。
 疾病：如果长期养生的话会治好吧。
@@ -394,13 +447,12 @@ function ChouQian(id) {
 结婚、交往：坏吧。`;}
     else if (id == 29){
         qian = `第二十九吉
+        
 忧轗渐消融
 求名得再通
 宝财临禄位
-当遇主人公
-轗：kan(3，形`
-        jie = `容车行颠簸不顺的样子，比喻人不得志。
-
+当遇主人公`
+        jie = `
 愿望：能被实现吧。
 疾病：会治好吧。
 遗失物：会出现吧。
@@ -409,6 +461,7 @@ function ChouQian(id) {
 结婚、交往：全都好吧。`;}
     else if (id == 30){
         qian = `第三十半吉
+        
 仙鹤立高枝
 防他暗箭亏
 井畔刚刀利
@@ -423,6 +476,7 @@ function ChouQian(id) {
 结婚、交往：节制吧。`;}
     else if (id == 31){
         qian = `第三十一末吉
+        
 鲲鲸未变时
 且守碧潭溪
 风云兴巨浪
@@ -437,6 +491,7 @@ function ChouQian(id) {
 结婚、交往：好吧。`;}
     else if (id == 32){
         qian = `第三十二吉
+        
 似玉藏深石
 休将故眼看
 一朝良匠别
@@ -450,6 +505,7 @@ function ChouQian(id) {
 结婚、交往：全部和好结果有关吧。`;}
     else if (id == 33){
         qian = `第三十三吉
+        
 枯木逢春艳
 芳菲再发林
 云间方见月
@@ -464,6 +520,7 @@ function ChouQian(id) {
 结婚、交往：全都好吧。`;}
     else if (id == 34){
         qian = `第三十四吉
+        
 腊木春将至
 芳菲喜再新
 鲲鲸兴巨浪
@@ -478,6 +535,7 @@ function ChouQian(id) {
 结婚、交往：全都和好结果相连吧。`;}
     else if (id == 35){
         qian = `第三十五吉
+        
 射鹿须乘箭
 故僧引路归
 遇道同仙籍
@@ -492,6 +550,7 @@ function ChouQian(id) {
 结婚、交往：好吧。`;}
     else if (id == 36){
         qian = `第三十六末吉
+        
 先损后有益
 如月之剥蚀
 玉兔待重生
@@ -506,6 +565,7 @@ function ChouQian(id) {
 结亲缘、喜庆、交往：不好吧。`;}
     else if (id == 37){
         qian = `第三十七半吉
+        
 阴叆未能通
 求名亦未逢
 幸然须有变
@@ -520,6 +580,7 @@ function ChouQian(id) {
 结婚、交往：往后一点，变成好吧。`;}
     else if (id == 38){
         qian = `第三十八半吉
+        
 月照天书静
 云生雾彩霞
 久想离庭客
@@ -534,6 +595,7 @@ function ChouQian(id) {
 结婚、交往：先放弃，暂时观察情况吧。`;}
     else if (id == 39){
         qian = `第三十九凶
+        
 望用方心腹
 家乡被火灾
 忧危三五度
@@ -548,13 +610,12 @@ function ChouQian(id) {
 结婚、交往：招致坏结果吧。`;}
     else if (id == 40){
         qian = `第四十末小吉
+        
 中正方成道
 奸邪恐惹愆　
 壶中盛妙药
-非久去烦煎
-愆：qian(1，过`
-            jie = `失、罪过之意
-
+非久去烦煎`
+            jie = `
 愿望：难以立刻地实现吧。
 疾病：虽然拖长但会治好吧。
 遗失物：会出现吧。
@@ -564,6 +625,7 @@ function ChouQian(id) {
 结婚、交往：不好也不坏吧。`;}
     else if (id == 41){
         qian = `第四十一末吉
+        
 有物不周旋
 须防损半边
 家乡烟火里
@@ -578,6 +640,7 @@ function ChouQian(id) {
 结婚、交往：会产生不好的结果吧。`;}
     else if (id == 42){
         qian = `第四十二吉
+        
 桂华春将到
 云天好进程
 贵人相遇处
@@ -592,6 +655,7 @@ function ChouQian(id) {
 结婚、交往：全都会变成好结果吧。`;}
     else if (id == 43){
         qian = `第四十三吉
+        
 月桂将相满
 追鹿映山溪
 贵人乘远箭
@@ -606,6 +670,7 @@ function ChouQian(id) {
 结婚、交往：变成好结果吧。`;}
     else if (id == 44){
         qian = `第四十四吉
+        
 盘中黑白子
 一着要先机
 天龙降甘泽
@@ -620,6 +685,7 @@ function ChouQian(id) {
 结婚、交往：全都好吧。`;}
     else if (id == 45){
         qian = `第四十五吉
+        
 有意兴高显
 禄马引前程
 得遇云中箭
@@ -634,13 +700,12 @@ function ChouQian(id) {
 结婚、交往：全都好结果相连吧。`;}
     else if (id == 46){
         qian = `第四十六凶
+        
 雷发震天昏
 佳人独掩门
 交加文书上
-无事也遭迍
-迍：zhun(1处境`
-            jie = `艰险，前进困难
-
+无事也遭迍`
+            jie = `
 愿望：难以实现吧。
 疾病：会治好吧。
 遗失物：难出现吧。
@@ -650,6 +715,7 @@ function ChouQian(id) {
 结婚、交往：会产生不好的结果吧。`;}
     else if (id == 47){
         qian = `第四十七吉
+        
 更望身前立
 何期在晚成
 若遇重山去
@@ -664,6 +730,7 @@ function ChouQian(id) {
 结婚、交往：全部都可得到好结果吧。`;}
     else if (id == 48){
         qian = `第四十八小吉
+        
 见禄隔前溪
 劳心休更迷
 一朝逢好渡
@@ -677,6 +744,7 @@ function ChouQian(id) {
 结婚、交往、旅行：马马虎虎吧。`;}
     else if (id == 49){
         qian = `第四十九吉
+        
 正好中秋月
 蟾蜍皎洁间
 暗云知何处
@@ -691,12 +759,12 @@ function ChouQian(id) {
 结婚、交往：马马虎虎吧。`;}
     else if (id == 50){
         qian = `第五十吉
+        
 有达宜更变
 重山利政逢
 前途相偶合
-财禄保亨通
-（重山即指两山`
-        jie = `相迭的出字）
+财禄保亨通`
+        jie = `
 
 愿望：会实现吧。
 疾病：会治好吧。
@@ -707,6 +775,7 @@ function ChouQian(id) {
 结婚、交往：成为好的结果吧。`;}
     else if (id == 51){
         qian = `第五十一吉
+        
 修进甚功辛
 劳生未得时
 腾身游碧汉
@@ -721,6 +790,7 @@ function ChouQian(id) {
 结婚、交往：会得到好结果吧。`;}
     else if (id == 52){
         qian = `第五十二凶
+        
 有僭须惹讼
 兼有事交加
 门里防人危
@@ -735,6 +805,7 @@ function ChouQian(id) {
 结婚、交往：不好也不坏吧。`;}
     else if (id == 53){
         qian = `第五十三吉
+        
 久困渐能安
 云书降印权
 残花终结实
@@ -749,6 +820,7 @@ function ChouQian(id) {
 结婚、交往：全都朝向好的方向发展吧。`;}
     else if (id == 54){
         qian = `第五十四凶
+        
 身同意不同
 月蚀暗长空
 轮虽常在手
@@ -762,6 +834,7 @@ function ChouQian(id) {
 结婚、交往：变成坏结果吧。`;}
     else if (id == 55){
         qian = `第五十五吉
+        
 云散月重明
 天书得志诚
 虽然多阻滞
@@ -776,6 +849,7 @@ function ChouQian(id) {
 结婚、交往：全都好吧。`;}
     else if (id == 56){
         qian = `第五十六末小吉
+        
 生涯喜又忧
 未老先白头
 劳心千百度
@@ -790,6 +864,7 @@ function ChouQian(id) {
 结婚、交往：马马虎虎还可以吧。`;}
     else if (id == 57){
         qian = `第五十七吉
+        
 欲渡长江阔
 波深未自俦
 前津逢浪静
@@ -804,6 +879,7 @@ function ChouQian(id) {
 结婚、交往：马马虎虎还可以吧。`;}
     else if (id == 58){
         qian = `第五十八凶
+        
 有径江海隔
 车行峻岭危
 亦防多进退
@@ -817,6 +893,7 @@ function ChouQian(id) {
 结婚、交往、旅行：坏吧。`;}
     else if (id == 59){
         qian = `第五十九凶
+        
 去住心无定
 行藏亦未宁
 一轮清皎洁
@@ -831,6 +908,7 @@ function ChouQian(id) {
 结婚、交往：得到坏结果吧。`;}
     else if (id == 60){
         qian = `第六十小吉
+        
 高危安可涉
 平坦是延年
 守道当逢泰
@@ -845,6 +923,7 @@ function ChouQian(id) {
 结婚、交往：马马虎虎地算好吧。`;}
     else if (id == 61){
         qian = `第六十一半吉
+        
 旧愆何日解
 户内保婵娟
 要逢十一口
@@ -859,13 +938,12 @@ function ChouQian(id) {
 结婚、交往：不好吧。`;}
     else if (id == 62){
         qian = `第六十二大吉
+        
 灾轗时时退
 名显四方扬
 改故重乘禄
-昴高福自昌
-轗：kan(3，形`
-            jie = `容车行颠簸不顺的样子，比喻人不得志。
-
+昴高福自昌`
+            jie = `
 愿望：会实现吧。
 疾病：会治好吧。
 遗失物：会出现吧。
@@ -875,6 +953,7 @@ function ChouQian(id) {
 结婚、交往：全都好吧。`;}
     else if (id == 63){
         qian = `第六十三凶
+        
 何故生荆棘
 佳人意渐疏
 久困重轮下
@@ -889,6 +968,7 @@ function ChouQian(id) {
 结婚、交往：会产生坏结果吧。`;}
     else if (id == 64){
         qian = `第六十四凶
+        
 安居且虑危
 情深主别离
 风飘波浪急
@@ -903,6 +983,7 @@ function ChouQian(id) {
 结婚、交往：不好吧。`;}
     else if (id == 65){
         qian = `第六十五末吉
+        
 苦病兼防辱
 乘危亦未稣
 若见一阳后
@@ -917,6 +998,7 @@ function ChouQian(id) {
 结婚、交往：得到还可以的好结果吧。`;}
     else if (id == 66){
         qian = `第六十六凶
+        
 水滞少波涛
 飞鸿落羽毛
 重忧心绪乱
@@ -931,6 +1013,7 @@ function ChouQian(id) {
 结婚、交往：坏吧。`;}
     else if (id == 67){
         qian = `第六十七凶
+        
 枯木未生枝
 独步上云岐
 岂知身未稳
@@ -945,6 +1028,7 @@ function ChouQian(id) {
 结婚、交往：坏吧。`;}
     else if (id == 68){
         qian = `第六十八吉
+        
 异梦生英杰
 前来事可疑
 芳菲春日暖
@@ -959,6 +1043,7 @@ function ChouQian(id) {
 结婚、交往：全都好吧。`;}
     else if (id == 69){
         qian = `第六十九凶
+        
 明月暗云浮
 花红一半枯
 惹事伤心处
@@ -973,13 +1058,12 @@ function ChouQian(id) {
 结婚、交往：坏吧。`;}
     else if (id == 70){
         qian = `第七十凶
+        
 雷发庭前草
 炎火向天飞
 一心来赶禄
-争奈掩朱扉
-【争奈】就是宋代`
-        jie = `以后的『怎奈』、『无奈』之意（更早的唐代则是『争那』）。
-
+争奈掩朱扉`
+        jie = `
 愿望：难实现吧。
 疾病：不能安心吧。
 遗失物：难出现吧。
@@ -988,6 +1072,7 @@ function ChouQian(id) {
 结婚、旅行、交往：万事坏吧。`;}
     else if (id == 71){
         qian = `第七十一凶
+        
 道业未成时
 何期两不宜
 事烦心绪乱
@@ -1001,6 +1086,7 @@ function ChouQian(id) {
 结婚、旅行、交往：产生坏的结果吧。`;}
     else if (id == 72){
         qian = `第七十二吉
+        
 户内防重厄
 花菓见分枝
 严霜纔过后
@@ -1015,6 +1101,7 @@ function ChouQian(id) {
 结婚、交往：虽然还算好，但最后变得更好吧。`;}
     else if (id == 73){
         qian = `第七十三吉
+        
 久暗渐分明
 登江绿水澄
 芝书从远降
@@ -1029,6 +1116,7 @@ function ChouQian(id) {
 结婚、交往：全都好吧。`;}
     else if (id == 74){
         qian = `第七十四凶
+        
 蛇虎正交罗
 牛生二尾多
 交岁方成庆
@@ -1042,6 +1130,7 @@ function ChouQian(id) {
 结婚、旅行、交往：坏吧。`;}
     else if (id == 75){
         qian = `第七十五凶
+        
 孤舟欲过岸
 浪急渡人空
 女人立流水
@@ -1056,6 +1145,7 @@ function ChouQian(id) {
 结婚、交往：坏吧。`;}
     else if (id == 76){
         qian = `第七十六吉
+        
 富贵天之佑
 何须苦用心
 前程应显迹
@@ -1070,6 +1160,7 @@ function ChouQian(id) {
 结婚、交往：全部都好吧。`;}
     else if (id == 77){
         qian = `第七十七凶
+        
 累滞未能稣
 求名莫远图
 登舟波浪急
@@ -1084,6 +1175,7 @@ function ChouQian(id) {
 结婚、交往：坏吧。`;}
     else if (id == 78){
         qian = `第七十八大吉
+        
 但存公道正
 何愁理去忠
 松柏苍苍翠
@@ -1099,6 +1191,7 @@ function ChouQian(id) {
     `;}
     else if (id == 79){
         qian = `第七十九吉
+        
 残月未还光
 樽前非语伤
 户中有人厄
@@ -1113,6 +1206,7 @@ function ChouQian(id) {
 结婚、交往：好吧。`;}
     else if (id == 80){
         qian = `第八十大吉
+        
 深山多养道
 忠正帝王宣
 凤遂鸾飞去
@@ -1127,6 +1221,7 @@ function ChouQian(id) {
 结婚、交往：是好的，因为全部都保持谦虚的姿态，所以会招来好结果吧。`;}
     else if (id == 81){
         qian = `第八十一小吉
+        
 道合须成合
 先忧事更多
 所求财宝盛
@@ -1141,6 +1236,7 @@ function ChouQian(id) {
 结婚、交往：好吧。`;}
     else if (id == 82){
         qian = `第八十二凶
+        
 火发应连天
 新愁惹旧愆
 欲求千里外
@@ -1155,6 +1251,7 @@ function ChouQian(id) {
 结婚、交往：全都坏吧。`;}
     else if (id == 83){
         qian = `第八十三凶
+        
 举步出云端
 高枝未可攀
 升头看皎月
@@ -1169,6 +1266,7 @@ function ChouQian(id) {
 结婚、交往：产生坏结果吧。`;}
     else if (id == 84){
         qian = `第八十四凶
+        
 否极方无泰
 花开值晚秋
 人情不调备
@@ -1183,6 +1281,7 @@ function ChouQian(id) {
 结婚、交往：全部都产生坏的结果吧。`;}
     else if (id == 85){
         qian = `第八十五大吉
+        
 望用何愁晚
 求名渐得宁
 云梯终有望
@@ -1197,6 +1296,7 @@ function ChouQian(id) {
 结婚、交往：好吧。`;}
     else if (id == 86){
         qian = `第八十六大吉
+        
 花发应阳台
 车行进宝财
 执文朝帝殿
@@ -1211,6 +1311,7 @@ function ChouQian(id) {
 结婚、交往：全都好吧。`;}
     else if (id == 87){
         qian = `第八十七大吉
+        
 凿石方逢玉
 淘沙始见金
 青霄终有路
@@ -1224,6 +1325,7 @@ function ChouQian(id) {
 结婚、交往：好吧。`;}
     else if (id == 88){
         qian = `第八十八凶
+        
 作事不和同
 临危更主凶
 佳人生苦根
@@ -1238,6 +1340,7 @@ function ChouQian(id) {
 结婚、交往：坏吧。`;}
     else if (id == 89){
         qian = `第八十九大吉
+        
 一片无瑕玉
 从今好琢磨
 得遇高人识
@@ -1251,6 +1354,7 @@ function ChouQian(id) {
 结婚、交往：好吧。`;}
     else if (id == 90){
         qian = `第九十大吉
+        
 一信向天飞
 秦川舟自归
 前途成好事
@@ -1265,6 +1369,7 @@ function ChouQian(id) {
 结婚、交往：全部都好吧。`;}
     else if (id == 91){
         qian = `第九十一吉
+        
 改变前途去
 月桂又逢圆
 云中乘禄至
@@ -1279,6 +1384,7 @@ function ChouQian(id) {
 结婚、交往：好吧。`;}
     else if (id == 92){
         qian = `第九十二吉
+        
 自幼常为旅
 逢春骏马骄
 前程宜进步
@@ -1293,6 +1399,7 @@ function ChouQian(id) {
 结婚、交往：好吧。`;}
     else if (id == 93){
         qian = `第九十三吉
+        
 有鱼临旱池
 跳跃入波涛
 隔中须有望
@@ -1307,6 +1414,7 @@ function ChouQian(id) {
 结婚、交往：好吧。`;}
     else if (id == 94){
         qian = `第九十四半吉
+        
 事忌樽前语
 人防小辈交
 幸乞阴公佑
@@ -1321,6 +1429,7 @@ function ChouQian(id) {
 结婚、交往：勉强还算可以吧。`;}
     else if (id == 95){
         qian = `第九十五吉
+        
 志气勤修业
 禄位未造逢
 若闻金鸡语
@@ -1335,6 +1444,7 @@ function ChouQian(id) {
 结婚、交往：好吧。`;}
     else if (id == 96){
         qian = `第九十六大吉
+        
 鸡逐凤同飞
 高林整羽仪
 棹舟须济岸
@@ -1349,6 +1459,7 @@ function ChouQian(id) {
 结婚、交往：全部好吧。`;}
     else if (id == 97){
         qian = `第九十七凶
+        
 雾罩重楼屋
 佳人水上行
 白云归去路
@@ -1363,6 +1474,7 @@ function ChouQian(id) {
 结婚、交往：坏吧。`;}
     else if (id == 98){
         qian = `第九十八凶
+        
 欲理新丝乱
 闲愁足是非
 只困罗网里
@@ -1377,6 +1489,7 @@ function ChouQian(id) {
 结婚、交往：坏吧。`;}
     else if (id == 99){
         qian = `第九十九大吉
+        
 红日当门照
 暗月再重圆
 遇珍须得宝
@@ -1391,6 +1504,7 @@ function ChouQian(id) {
 结婚、交往：好吧。`;}
     else if (id == 100){
         qian = `第一百签凶
+        
 禄走白云间
 携琴走远山
 不遇神仙面
@@ -1408,4 +1522,5 @@ function ChouQian(id) {
 
 module.exports = {
   ChouQian: ChouQian,
+  showBusy, showSuccess, showErr, showModel,
 }

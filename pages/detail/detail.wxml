@@ -1,5 +1,10 @@
 <view class="container">
   <text class = "qian">{{qian}}</text>
-  <text class = "jie">{{jie}}</text>   
+  <text class = "jie">{{jie}}</text>
+  <view style="display:flex;">
+    <button bindtap="bangQian">绑签</button>
+    <button style="margin-left:20rpx;" bindtap="about">关于观音签</button>
+  </view>
+  <image class="bgi" src="/images/asakusa.jpg"></image>
 </view>
   
