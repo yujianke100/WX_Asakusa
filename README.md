@@ -7,7 +7,7 @@
 
 小程序支持一日一签，挂签后可重新抽签。
 
-##mysql:
+## mysql:
 * asakusa
   * userInfo
     * openid
