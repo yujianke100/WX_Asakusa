@@ -1,9 +1,7 @@
 # WX_Asakusa
 浅草寺一百观音签
 
-![QR Code](https://github.com/yujianke100/WX_Asakusa/blob/master/images/gh_a6d8c579f96c_344.jpg)
-
-### 网页版：http://asakusa.ayaya.press/
+### 网页版：https://yujianke100.github.io/asakusa/index.html
 
 小程序支持一日一签，挂签后可重新抽签。
 
